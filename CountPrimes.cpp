@@ -1,5 +1,6 @@
-Count Primes
+//Q. 204 Count Primes
 
+//180ms solution
 class Solution {
 public:
     bool isPrime(int n)
@@ -27,24 +28,42 @@ public:
             if(isPrime(i))
                 cnt++;
         return cnt;
-        // int sieve[n+1],ans[n+1];
-        // fill(sieve+2,sieve+n+1,1);
-        // for(int i=2;i<=n;i++)
-        // {
-        //     if(sieve[i])
-        //     {
-        //         for(int j=2;i*j<=n;j++)
-        //             sieve[i*j] = 0;
-        //     }
-        // }
-        // memset(ans,0,sizeof(ans));
-        // for(int i=2;i<=n;i++)
-        // {
-        //     if(sieve[i])
-        //         ans[i] += ans[i-1],ans[i]++;
-        //     else
-        //         ans[i] += ans[i-1];
-        // }
-        // return ans[n-1];
+        
+    }
+};
+
+//40ms solution
+
+class Solution {
+public:
+    int Sieve(int n)
+    {
+       int prime[n+5];
+        fill(prime+2,prime+n+1,1);
+        for(int i=2;i<=n;i++)
+        {
+            if(prime[i])
+            {
+                for(int j=2;i*j<=n;j++)
+                {
+                    prime[i*j] = 0;
+                }
+            }
+        }
+        int cnt = 0;
+        for(int i=2;i<n;i++)
+        {
+            if(prime[i])
+                cnt++;
+        }
+        return cnt;
+    }
+    
+    int countPrimes(int n) {
+        if(n < 2)
+            return 0;
+        int ans = Sieve(n);
+        return ans;
+       
     }
 };
