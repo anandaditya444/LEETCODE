@@ -11,6 +11,7 @@
 class Solution {
 public:
     bool hasCycle(ListNode *head) {
+        //O(1) space complexity
         if(head == NULL || head->next == NULL)
             return false;
         ListNode* slow = head;
@@ -24,5 +25,16 @@ public:
                 return true;
         }
         return false;
+
+        //using hashmap
+        set<ListNode*>s;
+        while(head != NULL)
+        {
+            if(s.find(head) != s.end())
+                return true;
+            else
+                s.insert(head);
+            head = head->next;
+        }
     }
 };
