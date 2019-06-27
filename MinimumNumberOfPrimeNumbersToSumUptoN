@@ -1,0 +1,13 @@
+https://stackoverflow.com/questions/35755825/find-minimum-prime-numbers-which-sum-to-a-given-value
+
+
+
+Although your question didn't say so, I assume you are looking for the set of primes that has the smallest cardinality.
+
+If n is even, then consider the primes p in order, 2, 3, 5, …; eventually n - p will be prime, so n is the sum of two primes. This process typically converges very quickly, with the smaller of the two primes seldom larger than 1000 (and usually much smaller than that).
+
+If n is odd, and n - 2 is prime, then n is the sum of the primes 2 and n - 2.
+
+If n is odd, and n - 2 is not prime, then n - 3 is even and can be written as the sum of two primes, as described above.
+
+Thus you can always find two or three primes that sum to any target n greater than 3.
