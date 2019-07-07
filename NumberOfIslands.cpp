@@ -1,5 +1,6 @@
 //Q. 200
 
+
 class Solution {
 public:
     int dx[4] = {-1,+1,0,0};
