@@ -9,9 +9,33 @@ using namespace std;
 #define pf push_front
 #define endl "\n"
 
+const int N = 1e4+5;
+int a[N];
+int cur = 1;
+
+int dp(int idx)
+{
+	for(int i=1;i<=n;i++)
+	{
+		if(i == idx)
+			continue;
+		ans = min(a[i]+1,min(a[i]+2))
+
+	}
+}
+
 int32_t main()
 {
 	IOS;
+	int t,n;
+	cin>>t;
+	while(t--)
+	{
+		cin>>n;
+		for(int i=1;i<=n;i++)
+			cin>>a[i];
+		dp(1)
+	}
 
 
 

@@ -1,6 +1,6 @@
 //Q.338
 
-//O(n*size_of_integer)
+//O(n*size_ of_integer)
 
 class Solution {
 public:
