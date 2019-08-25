@@ -34,3 +34,35 @@ public:
         return v;
     }
 };
+
+
+
+
+class Solution {
+public:
+    vector<vector<int>> generate(int numRows) {
+        vector<vector<int> >v;
+        vector<int>res;
+        if(numRows == 0)
+            return v;
+        v.push_back({1});
+        if(numRows == 1)
+            return v;
+        v.push_back({1,1});
+        if(numRows == 2)
+            return v;
+        for(int i=3;i<=numRows;i++)
+        {
+            vector<int>cur;
+            cur.push_back(1);
+            for(int j=1;j<v[i-2].size();j++)
+            {
+                int val = v[i-2][j]+v[i-2][j-1];
+                cur.push_back(val);
+            }
+            cur.push_back(1);
+            v.push_back(cur);
+        }
+        return v;
+    }
+};

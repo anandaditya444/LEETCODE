@@ -11,4 +11,5 @@ public:
                 nums[i++] = x;
         }
         return i;
+    }
         
